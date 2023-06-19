@@ -15,9 +15,10 @@ data "nutanix_subnet" "subnet" {
 }
 
 provider "nutanix" {
-  username     = var.user
+  username     = var.username
   password     = var.password
   endpoint     = var.endpoint
+  port         = var.port
   insecure     = true
   wait_timeout = 60
 }
@@ -25,7 +26,7 @@ provider "nutanix" {
 resource "nutanix_image" "image" {
   name        = "Arch Linux"
   description = "Arch-Linux-x86_64-basic-20210401.18564"
-  source_uri  = "https://mirror.pkgbuild.com/images/latest/Arch-Linux-x86_64-basic-20210415.20050.qcow2"
+  source_uri  = "https://mirror.pkgbuild.com/images/v20230615.158351/Arch-Linux-x86_64-basic-20230615.158351.qcow2"
 }
 
 resource "nutanix_virtual_machine" "vm" {
