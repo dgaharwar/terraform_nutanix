@@ -10,6 +10,6 @@ variable "password" {
 variable "endpoint" {
   type = string
 }
-variable "user" {
+variable "username" {
   type = string
 }
