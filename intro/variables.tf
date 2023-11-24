@@ -37,11 +37,3 @@ variable "t_memory_size_mib" {
   type = string
   default = "<%=customOptions.i_vmem%>"
 }
-
-data "nutanix_cluster" "cluster" {
-  name = var.cluster_name
-}
-
-data "nutanix_subnet" "subnet" {
-  subnet_name = var.subnet_name
-}
