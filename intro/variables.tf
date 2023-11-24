@@ -22,6 +22,10 @@ variable "port" {
   type = string
 }
 
+variable "instance_count" {
+  type = string
+}
+
 variable "t_num_sockets" {
   description = "Nutanix VM vCPUS's"
   type = string
@@ -32,4 +36,12 @@ variable "t_memory_size_mib" {
   description = "Nutanix VM MEM"
   type = string
   default = "<%=customOptions.i_vmem%>"
+}
+
+data "nutanix_cluster" "cluster" {
+  name = var.cluster_name
+}
+
+data "nutanix_subnet" "subnet" {
+  subnet_name = var.subnet_name
 }
