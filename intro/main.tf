@@ -33,8 +33,8 @@ resource "nutanix_virtual_machine" "vm" {
   name                 = "MyVM from the Terraform Nutanix Provider"
   cluster_uuid         = data.nutanix_cluster.cluster.id
   num_vcpus_per_socket = "2"
-  num_sockets          = "1"
-  memory_size_mib      = 1024
+  num_sockets          = var.t_num_sockets
+  memory_size_mib      = var.t_memory_size_mib
 
   disk_list {
     data_source_reference = {
