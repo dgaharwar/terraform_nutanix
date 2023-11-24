@@ -18,6 +18,10 @@ variable "username" {
   type = string
 }
 
+variable "port" {
+  type = string
+}
+
 variable "t_num_sockets" {
   description = "Nutanix VM vCPUS's"
   type = string
