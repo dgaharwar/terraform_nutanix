@@ -30,7 +30,7 @@ resource "nutanix_image" "image" {
 }
 
 resource "nutanix_virtual_machine" "vm" {
-  name                 = "MyVM from the Terraform Nutanix Provider"
+  name                 = "My VM from the Terraform Nutanix Provider"
   cluster_uuid         = data.nutanix_cluster.cluster.id
   num_vcpus_per_socket = "2"
   num_sockets          = var.t_num_sockets

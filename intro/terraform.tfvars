@@ -1,5 +1,5 @@
-cluster_name = "NTNX-6a9e189a-A"
-subnet_name  = "Nutanix managed 10.32.22.160/27"
+#cluster_name = "NTNX-6a9e189a-A"
+#subnet_name  = "Nutanix managed 10.32.22.160/27"
 #user         = "Prism Central admin user"
 #password     = "Password"
 #endpoint     = "IP address of Prism Central"
