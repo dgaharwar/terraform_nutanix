@@ -31,5 +31,5 @@ variable "t_num_sockets" {
 variable "t_memory_size_mib" {
   description = "Nutanix VM MEM"
   type = string
-  default = "<%=customOptions.i_mem%>"
+  default = "<%=customOptions.i_vmem%>"
 }
