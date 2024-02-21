@@ -29,6 +29,16 @@ resource "nutanix_image" "image" {
   source_uri  = "https://mirror.pkgbuild.com/images/v20231215.200192/Arch-Linux-x86_64-basic.qcow2"
 }
 
+data "template_file" "unattend" {
+  template = file("${path.module}/unattend.xml")
+  vars = {
+    vm_name             = var.t_vm_name
+    hostname            = var.t_hostname
+    admin_username      = var.t_admin_username
+    admin_password      = var.t_admin_password
+  }
+}
+
 resource "nutanix_virtual_machine" "vm" {
   count                = var.instance_count
   name                 = "hashi-{count.index}"
@@ -37,7 +47,10 @@ resource "nutanix_virtual_machine" "vm" {
   num_sockets          = var.t_num_sockets
   memory_size_mib      = var.t_memory_size_mib
 
-  guest_customization_cloud_init_user_data = base64encode(templatefile("${path.module}/cloud-init.tpl", { hostname = "hashi-${count.index}" }))
+  guest_customization_sysprep = {
+    install_type = "PREPARED"
+    unattend_xml = base64encode(data.template_file.unattend.rendered)
+  }
 
   disk_list {
     disk_size_bytes = 104857600000
