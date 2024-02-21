@@ -37,3 +37,28 @@ variable "t_memory_size_mib" {
   type = string
   default = "<%=customOptions.i_vmem%>"
 }
+
+variable "t_vm_name" {
+  description = "Nutanix VM name van VM in CAPITALS"
+  type        = string
+  sensitive   = false
+}
+
+variable "t_hostname" {
+  description = "hostnaam van VM"
+  type        = string
+  sensitive   = false
+}
+
+variable "t_admin_username" {
+  description = "Name of domain for VMs"
+  type        = string
+  sensitive   = true
+  default     = "Administrator"
+}
+
+variable "t_admin_password" {
+  description = "Name of domain for VMs"
+  type        = string
+  sensitive   = true
+}
