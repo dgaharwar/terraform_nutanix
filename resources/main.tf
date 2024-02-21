@@ -58,7 +58,14 @@ resource "nutanix_virtual_machine" "vm" {
       }
     }
   }
+
   nic_list {
     subnet_uuid = data.nutanix_subnet.subnet.id
+  }
+
+  provisioner "local-exec" {
+    command = <<EOT
+    echo "not doing anything anymore"
+    EOT
   }
 }
