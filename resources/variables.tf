@@ -22,8 +22,13 @@ variable "port" {
   type = string
 }
 
-variable "instance_count" {
-  type = string
+#variable "instance_count" {
+#  type = string
+#}
+
+variable "instance_name" {
+  type    = string
+  default = "<%=customOptions.Instance_Name%>"
 }
 
 variable "t_num_sockets" {
