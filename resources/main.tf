@@ -49,7 +49,7 @@ resource "nutanix_virtual_machine" "vm" {
   count                = var.instance_count
   name                 = "hashi-{count.index}"
   cluster_uuid         = data.nutanix_cluster.cluster.id
-  num_vcpus_per_socket = "2"
+  num_vcpus_per_socket = "4"
   num_sockets          = var.t_num_sockets
   memory_size_mib      = var.t_memory_size_mib
 
