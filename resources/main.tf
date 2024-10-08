@@ -32,7 +32,7 @@ provider "nutanix" {
 resource "nutanix_image" "image" {
   name         = "Windows Server 2019"
   description  = "17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso"
-  source_url   = "https://go.microsoft.com/fwlink/p/?LinkID=2195167&clcid=0x409&culture=en-us&country=US"
+  source_uri   = "https://go.microsoft.com/fwlink/p/?LinkID=2195167&clcid=0x409&culture=en-us&country=US"
 }
 
 data "template_file" "unattend" {
