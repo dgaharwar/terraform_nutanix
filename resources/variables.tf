@@ -53,7 +53,7 @@ variable "t_hostname" {
 variable "t_admin_username" {
   description = "Name of domain for VMs"
   type        = string
-  sensitive   = true
+  sensitive   = false
   default     = "Administrator"
 }
 
