@@ -47,7 +47,7 @@ data "template_file" "unattend" {
 
 resource "nutanix_virtual_machine" "vm" {
 #  count                = var.instance_count
-  name                 = "<%=customOptions.Instance_Name%>"
+  name                 = var.instance_name
   cluster_uuid         = data.nutanix_cluster.cluster.id
   num_vcpus_per_socket = "1"
   num_sockets          = var.t_num_sockets
