@@ -43,7 +43,7 @@
               <PlainText>false</PlainText>
             </Password>
             <Group>Administrators</Group>
-            <DisplayName>Anish Abraham</DisplayName>
+            <DisplayName>Deepti Gaharwar</DisplayName>
             <Name>${admin_username}</Name>
           </LocalAccount>
         </LocalAccounts>
