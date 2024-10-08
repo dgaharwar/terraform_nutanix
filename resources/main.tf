@@ -23,17 +23,17 @@ provider "nutanix" {
   wait_timeout = 60
 }
 
-#resource "nutanix_image" "image" {
-#  name        = "Arch Linux"
-#  description = "Arch-Linux-x86_64-basic-20241001.267073.qcow2"
-#  source_uri  = "https://mirror.pkgbuild.com/images/v20241001.267073/Arch-Linux-x86_64-basic-20241001.267073.qcow2"
-#}
-
 resource "nutanix_image" "image" {
-  name         = "Windows Server 2019"
-  description  = "17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso"
-  source_uri   = "https://go.microsoft.com/fwlink/p/?LinkID=2195167&clcid=0x409&culture=en-us&country=US"
+  name        = "Arch Linux"
+  description = "Arch-Linux-x86_64-basic-20241001.267073.qcow2"
+  source_uri  = "https://mirror.pkgbuild.com/images/v20241001.267073/Arch-Linux-x86_64-basic-20241001.267073.qcow2"
 }
+
+#resource "nutanix_image" "image" {
+#  name         = "Windows Server 2019"
+#  description  = "17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso"
+#  source_uri   = "https://go.microsoft.com/fwlink/p/?LinkID=2195167&clcid=0x409&culture=en-us&country=US"
+#}
 
 data "template_file" "unattend" {
   template = file("${path.module}/unattend.xml")
