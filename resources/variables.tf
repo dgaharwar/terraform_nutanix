@@ -33,14 +33,14 @@ variable "instance_name" {
 
 variable "t_num_sockets" {
   description = "Nutanix VM vCPUS's"
-  type = string
-  default = "<%=customOptions.i_vcpu%>"
+  type        = string
+  default     = "<%=customOptions.i_vcpu%>"
 }
 
 variable "t_memory_size_mib" {
   description = "Nutanix VM MEM"
-  type = string
-  default = "<%=customOptions.i_vmem%>"
+  type        = string
+  default     = "<%=customOptions.i_vmem%>"
 }
 
 variable "t_vm_name" {
