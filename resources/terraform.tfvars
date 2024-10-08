@@ -1,5 +1,5 @@
-cluster_name = "MorpheusNutanix2"
-subnet_name  = "Nutanix managed 10.32.22.160/27"
+cluster_name = "labs-nutanix-aws-2"
+subnet_name  = "PC-Net labs-nutanix-aws-2"
 #user         = "Prism Central admin user"
 #password     = "Password"
 #endpoint     = "IP address of Prism Central"
